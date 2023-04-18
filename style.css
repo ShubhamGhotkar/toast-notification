@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: purple;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+}
+
+.btn {
+  padding: 2rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+
+  font-size: 2rem;
+}
+
+.show--output {
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  width: 35rem;
+  background-color: white;
+}
