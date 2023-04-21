@@ -1,8 +1,6 @@
 //
 const button = document.querySelector(".btn--notification");
 const output = document.querySelector(".show--output");
-const message = document.querySelector(".btn--message");
-const crossBtn = document.querySelector(".icon");
 const messageContainer = document.querySelector(".message--div");
 
 let arr = [
@@ -24,17 +22,6 @@ let arr = [
   },
 ];
 
-// for show the message
-button.addEventListener("click", addClickEvent);
-message.addEventListener("click", () => {
-  messageContainer.classList.add("show");
-});
-
-// for hide the message
-crossBtn.addEventListener("click", () => {
-  messageContainer.classList.remove("show");
-});
-
 function addClickEvent() {
   //to show output from array
   let index = Math.floor(Math.random() * arr.length);
@@ -49,8 +36,47 @@ function addClickEvent() {
   paraElement.classList.add("para");
   output.appendChild(paraElement);
 
-  //for remove element
+  // for remove element
   setTimeout(() => {
     paraElement.remove();
   }, 3000);
 }
+
+//  FOR SHOW NOTIFICATION
+button.addEventListener("click", addClickEvent);
+
+// FOR ANOTHER BUTTON
+const message = document.querySelector(".btn--message");
+
+message.addEventListener("click", () => {
+  let index = Math.floor(Math.random() * arr.length);
+  const { message, color } = arr[index];
+
+  // MAKE DIV CONTAINER AND APPEND WITH MAIN OUTPUT CONTAINER
+  const divEle = document.createElement("div");
+  output.appendChild(divEle);
+
+  // CREATE PARAGRAPH AND BUTTON ELEMENT FOE MESSAGE AND DELETE
+  const pEle = document.createElement("p");
+  const buttonEle = document.createElement("button");
+
+  // ASSIGN VALUE TO BOTH ELEMENT
+  pEle.textContent = message;
+  pEle.style.color = color;
+  buttonEle.textContent = "X";
+
+  // ADD CLASSES TO NEW CRETE ELEMENT
+  divEle.classList.add("div__class");
+  pEle.classList.add("div__class--para");
+  buttonEle.classList.add("delete-btn");
+
+  // APPEND CREATE ELEMENT TO THE NEW DIV CONTAINER ELEMENT
+  divEle.appendChild(pEle);
+  divEle.appendChild(buttonEle);
+
+  // DELETE FUNCTIONALITY
+
+  buttonEle.addEventListener("click", () => {
+    divEle.remove();
+  });
+});

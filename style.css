@@ -62,36 +62,38 @@ button {
   box-shadow: 0 0 6px whitesmoke;
 }
 
-.message--div {
-  display: none;
-  position: absolute;
-  width: 30rem;
-  left: 10%;
-  top: 20%;
-  background-color: #fff;
+.show--output {
+  width: max-content;
+  /* background-color: #fff; */
   padding: 2rem;
-  font-size: 1.6rem;
-  border-radius: 0.5rem;
 }
 
-.message--para {
-  margin-bottom: 2rem;
-  padding: 1rem;
-}
+.div__class {
+  width: max-content;
+  background-color: #fff;
 
-.icon {
-  width: 2.4rem;
-  stroke: purple;
-  margin-bottom: 2rem;
-  cursor: pointer;
-}
-
-.icon-container {
   display: flex;
-  flex-direction: column;
-  align-items: end;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  margin-bottom: 1rem;
+  padding: .6rem 1.6rem;
+
+  border-radius: 1rem;
 }
 
-.show {
-  display: block;
+.delete-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  transform: translate(-50% -50%);
+  border: none;
+  cursor: pointer;
+  margin:1rem .5rem ;
+  border-radius: .5rem ;
+  background-color: whitesmoke;
+}
+
+.div__class--para {
+  font-size: 1.6rem;
 }
